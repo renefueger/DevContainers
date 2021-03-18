@@ -1,0 +1,15 @@
+version: '2.4'
+
+services:
+  python:
+    build:
+      context: .
+    environment:
+      - DISPLAY
+    volumes:
+       - ./ssh-keys:/ssh-keys
+       - ../project:/project
+    stdin_open: true
+    tty: true
+    command: /bin/sh -c "while sleep 1000;do :;done;"  
+ 
